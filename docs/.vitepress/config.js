@@ -53,7 +53,8 @@ export default defineConfig({
             { text: '快速开始', link: '/guide/quick-start' },
             { text: '仓库结构', link: '/guide/repo-structure' },
             { text: '新增项目规范', link: '/guide/add-new-project' },
-            { text: '部署指南', link: '/guide/deploy' }
+            { text: '部署指南', link: '/guide/deploy' },
+            { text: '学习计划', link: '/guide/learning-plan' }
           ]
         }
       ],
