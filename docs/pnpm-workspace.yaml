@@ -1,0 +1,5 @@
+allowBuilds:
+  esbuild: true
+# 解决pnpm拦截esbuild脚本问题
+onlyBuiltDependencies:
+  - esbuild

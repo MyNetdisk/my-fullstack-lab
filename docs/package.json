@@ -1,0 +1,15 @@
+{
+  "name": "my-fullstack-lab-docs",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "deploy": "gh-pages -d .vitepress/dist -b gh-pages"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vitepress": "^1.5.0"
+  }
+}
