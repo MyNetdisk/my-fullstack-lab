@@ -2,10 +2,9 @@ name: Deploy Docs to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # 你的主分支名，如果是master就改成master
-  workflow_dispatch: # 支持手动在github页面触发部署
+    branches: [ main ]
+  workflow_dispatch:
 
-# 权限，必须配置
 permissions:
   contents: read
   pages: write
@@ -18,16 +17,18 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'pnpm'
-
+      # 👉 先安装pnpm！放在setup-node前面
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 11
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm' # 现在pnpm已经存在，缓存生效
+          cache-dependency-path: docs/pnpm-lock.yaml
 
       - name: Install dependencies
         working-directory: ./docs
